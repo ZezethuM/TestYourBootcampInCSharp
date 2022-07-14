@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 namespace BootcampFunctions.Test
 {
     public class FindItemsOver20Test
@@ -11,7 +12,7 @@ namespace BootcampFunctions.Test
                  {new Item()  {Name = "pears", Qty = 37}},
                  {new Item()  {Name = "bananas", Qty = 27}},
                  {new Item()  {Name = "apples", Qty = 3}}
-                
+
             };
 
             List<Item> over20Items = new List<Item>()
@@ -20,7 +21,7 @@ namespace BootcampFunctions.Test
                 {new Item()  {Name = "bananas", Qty = 27}},
             };
 
-            Assert.Equal(over20Items.ToString(), FindItemsOver20.FindItems(listOfItem).ToString());
+            Assert.Equal(JsonConvert.SerializeObject(over20Items), JsonConvert.SerializeObject(FindItemsOver20.FindItems(listOfItem)));
         }
     
      [Fact]
@@ -41,7 +42,7 @@ namespace BootcampFunctions.Test
                 {new Item()  {Name = "bananas", Qty = 27}},
             };
 
-            Assert.Equal(over20Items2.ToString(), FindItemsOver20.FindItems(listOfItem2).ToString());
+            Assert.Equal(JsonConvert.SerializeObject(over20Items2), JsonConvert.SerializeObject(FindItemsOver20.FindItems(listOfItem2)));
         }
     }
 }

@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 namespace BootcampFunctions.Test
 {
     public class FindItemsOverTest
@@ -16,12 +17,11 @@ namespace BootcampFunctions.Test
 
             List<Item1> overItems1 = new List<Item1>()
             {
-                {new Item1()  {Name1 = "apples", Qty1 = 10}},
                 {new Item1()  {Name1 = "pears", Qty1 = 37}},
                 {new Item1()  {Name1 = "bananas", Qty1 = 27}}
             };
 
-            Assert.Equal(overItems1.ToString(), FindItemsOver.FindItems1(listOfItems3, 10).ToString());
+            Assert.Equal(JsonConvert.SerializeObject(overItems1), JsonConvert.SerializeObject(FindItemsOver.FindItems1(listOfItems3, 10)));
         }
     
      [Fact]
