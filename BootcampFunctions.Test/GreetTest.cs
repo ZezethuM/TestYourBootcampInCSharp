@@ -13,9 +13,9 @@ namespace BootcampFunctions.Test
         }
 
         [Fact]
-        public void ShouldBeAbleToGreetLihle()
+        public void ShouldBeReturnAPleaseEnterNameMessageIfEmptyStringIsPassed()
         {
-            Assert.Equal("Hello, Lihle", Greet.Execute("Lihle"));
+            Assert.Equal("Please enter a name", Greet.Execute(""));
         }
     }
 }

@@ -11,7 +11,7 @@ namespace BootcampFunctions.Test
         [Fact]
         public void ShouldReturnOneWhenCalledWIthEmptyString()
         {
-            Assert.Equal(1, CountRegNumber.registrationNumbers(""));
+            Assert.Equal(0, CountRegNumber.registrationNumbers(""));
         }
 
     }
